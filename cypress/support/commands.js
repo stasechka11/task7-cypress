@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", (email, password) => {
+    if (email) 
+        cy.get('[name="email"]').type(email);
+
+    if (password) 
+        cy.get('[name="password"]').type(password);
+
+    cy.contains("Авторизоваться").click();
+  });
+
+  Cypress.Commands.add("checkInputValidity", (inputName) => {
+    cy.get(`[name=${inputName}]`).then((elements) => {
+        expect(elements[0].checkValidity()).to.be.false;
+        expect(elements[0].validationMessage).to.be.eql("Заполните это поле.");
+      })
+ });
