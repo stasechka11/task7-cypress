@@ -20,4 +20,14 @@ describe('Admin portal tests', () => {
     cy.checkInputValidity("email");
   });
 
+  it("Should show error when login with empty email", () => {
+    cy.login("", login.validPassword);
+    cy.checkInputValidity("email");
+  });
+
+  it("Should show error when login with empty password", () => {
+    cy.login(login.validEmail, "");
+    cy.checkInputValidity("password");
+  });
+
 })
