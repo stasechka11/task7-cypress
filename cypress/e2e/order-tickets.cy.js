@@ -1,4 +1,5 @@
 import seats from "../fixtures/seats.json"
+const selector = require("../fixtures/selectors-main-page.json")
 
 describe('order ticket', () => {
   beforeEach( () => {
@@ -7,7 +8,7 @@ describe('order ticket', () => {
 
   seats.forEach((test) => {
     it(test.name, () => {
-      cy.get('.page-nav__day').then((elements) => {
+      cy.get(selector.days).then((elements) => {
         elements[2].click();
       cy.contains("13:00").click();
       })
