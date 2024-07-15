@@ -1,5 +1,6 @@
 import seats from "../fixtures/seats.json"
 const selector = require("../fixtures/selectors-main-page.json")
+const selectorsOrderPage = require("../fixtures/selectors-order-tickets-page.json")
 
 describe('order ticket', () => {
   beforeEach( () => {
@@ -18,9 +19,9 @@ describe('order ticket', () => {
           `.buying-scheme__wrapper > :nth-child(${item.row}) > :nth-child(${item.seat})`
         ).click();
       })
-      cy.get('.acceptin-button').click();
+      cy.get(selectorsOrderPage.orderButton).click();
 
-      cy.get('.ticket__check-title').should("have.text", "Вы выбрали билеты:");
+      cy.get(selectorsOrderPage.orderTicketsSuccessTitle).should("have.text", "Вы выбрали билеты:");
     })
   })
 })

@@ -1,0 +1,4 @@
+{
+    "orderButton": ".acceptin-button",
+    "orderTicketsSuccessTitle": ".ticket__check-title"
+}
