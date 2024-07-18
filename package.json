@@ -4,12 +4,15 @@
   "description": "Cypress task 2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:mainPage": "npx cypress run --record --key 46204354-9706-4f51-8e73-780a0be19306 --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --ci-build-id 10",
+    "test:orderTickets": "npx cypress run --record --key 46204354-9706-4f51-8e73-780a0be19306 --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --ci-build-id 10",
+    "test:parallel": "run-p -c test:mainPage test:orderTickets"
   },
   "author": "Anastasia Fokina",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.13.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.3.2"
   }
 }
