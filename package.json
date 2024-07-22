@@ -4,9 +4,19 @@
   "description": "Cypress task 2",
   "main": "index.js",
   "scripts": {
-    "test:mainPage": "npx cypress run --record --key 46204354-9706-4f51-8e73-780a0be19306 --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --ci-build-id 10",
-    "test:orderTickets": "npx cypress run --record --key 46204354-9706-4f51-8e73-780a0be19306 --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --ci-build-id 10",
-    "test:parallel": "run-p -c test:mainPage test:orderTickets"
+    "test:mainPage:chrome": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser chrome",
+    "test:orderTickets:chrome": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser chrome",
+    "test:parallel:chrome": "run-p -c test:mainPage:chrome test:orderTickets:chrome",
+
+    "test:mainPage:msedge": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser edge",
+    "test:orderTickets:msedge": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser edge",
+    "test:parallel:msedge": "run-p -c test:mainPage:msedge test:orderTickets:msedge",
+
+    "test:mainPage:electron": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser electron",
+    "test:orderTickets:electron": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser electron",
+    "test:parallel:electron": "run-p -c test:mainPage:electron test:orderTickets:electron",
+
+    "test:parallel:chromeElectron": "run-p -c test:mainPage:chrome test:orderTickets:electron"
   },
   "author": "Anastasia Fokina",
   "license": "ISC",
