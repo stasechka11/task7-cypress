@@ -1,6 +1,6 @@
-import seats from "../fixtures/seats.json"
-const selector = require("../fixtures/selectors-main-page.json")
-const selectorsOrderPage = require("../fixtures/selectors-order-tickets-page.json")
+import seats from "../../fixtures/seats.json"
+const selector = require("../../fixtures/selectors-main-page.json")
+const selectorsOrderPage = require("../../fixtures/selectors-order-tickets-page.json")
 
 describe('order ticket', () => {
   beforeEach( () => {

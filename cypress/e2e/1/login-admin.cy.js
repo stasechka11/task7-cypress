@@ -1,4 +1,4 @@
-const login = require("../fixtures/admin-login.json");
+const login = require("../../fixtures/admin-login.json");
 
 describe('Admin portal tests', () => {
   beforeEach( () => {

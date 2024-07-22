@@ -1,4 +1,4 @@
-const selector = require("../fixtures/selectors-main-page.json")
+const selector = require("../../fixtures/selectors-main-page.json")
 
 describe('Cinema main page tests', () => {
   beforeEach( () => {

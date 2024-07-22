@@ -4,16 +4,16 @@
   "description": "Cypress task 2",
   "main": "index.js",
   "scripts": {
-    "test:mainPage:chrome": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser chrome",
-    "test:orderTickets:chrome": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser chrome",
+    "test:mainPage:chrome": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\1\\cinema_main_page.cy.js\" --browser chrome",
+    "test:orderTickets:chrome": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\2\\order-tickets.cy.js\" --browser chrome",
     "test:parallel:chrome": "run-p -c test:mainPage:chrome test:orderTickets:chrome",
 
-    "test:mainPage:msedge": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser edge",
-    "test:orderTickets:msedge": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser edge",
+    "test:mainPage:msedge": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\1\\cinema_main_page.cy.js\" --browser edge",
+    "test:orderTickets:msedge": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\2\\order-tickets.cy.js\" --browser edge",
     "test:parallel:msedge": "run-p -c test:mainPage:msedge test:orderTickets:msedge",
 
-    "test:mainPage:electron": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\cinema_main_page.cy.js\" --browser electron",
-    "test:orderTickets:electron": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\order-tickets.cy.js\" --browser electron",
+    "test:mainPage:electron": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\1\\cinema_main_page.cy.js\" --browser electron",
+    "test:orderTickets:electron": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\2\\order-tickets.cy.js\" --browser electron",
     "test:parallel:electron": "run-p -c test:mainPage:electron test:orderTickets:electron",
 
     "test:parallel:chromeElectron": "run-p -c test:mainPage:chrome test:orderTickets:electron"
