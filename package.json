@@ -16,7 +16,11 @@
     "test:orderTickets:electron": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\2\\order-tickets.cy.js\" --browser electron",
     "test:parallel:electron": "run-p -c test:mainPage:electron test:orderTickets:electron",
 
-    "test:parallel:chromeElectron": "run-p -c test:mainPage:chrome test:orderTickets:electron"
+    "test:parallel:chromeElectron": "run-p -c test:mainPage:chrome test:orderTickets:electron",
+
+    "test:folder1": "npx cypress run --record --group mainPage --spec \"cypress\\e2e\\1\\*\" --browser chrome",
+    "test:folder2": "npx cypress run --record --group orderTickets --spec \"cypress\\e2e\\2\\*\" --browser chrome",
+    "test:parallel:twoFolders": "run-p -c test:folder1 test:folder2"
   },
   "author": "Anastasia Fokina",
   "license": "ISC",
